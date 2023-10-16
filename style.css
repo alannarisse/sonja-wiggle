@@ -1,0 +1,170 @@
+* {
+  box-sizing:border-box;
+}
+body {
+  margin:0;
+}
+main {
+  width:100vw;
+  height:100vh;
+  background-color:rgb(240, 220, 38);
+  display:flex;
+  align-items:center;
+}
+h1 {
+  font-size:120px;
+  position:relative;
+  z-index:1;
+}
+.frame {
+  background-image: url('images/pexels-pixabay-262713.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 90vw;
+  margin:auto;
+  height:90vh;
+  border-radius: 20px;
+  border:1px solid black;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.pika-img {
+  width:40%;
+  z-index: 3;
+  position:absolute;
+  bottom: 160px;
+  left: 20%;
+}
+.pika-wiggle {
+  animation-name: wiggle;
+  animation-duration:2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 4;
+  animation-direction: alternate;
+  transform:rotate(0deg);
+}
+
+@keyframes wiggle {
+  0% {
+    transform:rotate(0deg);
+  }
+  50% {
+    transform:rotate(-15deg);
+  }
+  100% {transform:rotate(15deg);}
+}
+.rock-img {
+  position: absolute;
+  bottom:-160px;
+  left:20%;
+  right:0;
+  width:70%;
+  z-index:3;
+}
+
+/* START OF NAV CODE */
+.nav {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  width: 100%;
+  z-index: 900;
+}
+
+.icon {
+  position: fixed;
+  cursor: pointer;
+  top: 60px;
+  right: -28px;
+  width: 40px;
+  height: 45px;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 1000;
+  padding: 26px;
+  border-radius: 50%;
+}
+
+.hamburger {
+  width: 40px;
+  height: 4px;
+  line-height: 70px;
+  background-color:rgb(240, 220, 38);
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  transition: 0.5s;
+}
+
+.hamburger:before,
+.hamburger:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color:rgb(240, 220, 38);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.hamburger:before {
+  top: -10px;
+}
+
+.hamburger:after {
+  top: 10px;
+}
+
+.icon.active .hamburger {
+  background: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+.icon.active .hamburger:before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.icon.active .hamburger:after {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.menu-mobile {
+  background-color:none;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding-top: 150px;
+  font-family: 'Helvetica', sans-serif;
+  text-align: center;
+}
+
+.menu-mobile,
+.menu-mobile a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.menu-mobile a {
+  clear: right;
+  text-decoration: none;
+  color: #333;
+  height: 70px;
+  line-height: 70px;
+}
+.menu-mobile a:hover {
+  color: red;
+}
+
+.menu-mobile {
+  display: none;
+}
+/* END OF NAV CODE */
